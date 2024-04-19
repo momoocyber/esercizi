@@ -300,5 +300,53 @@ print(person_list[0]['nome'], person_list[0]['cognome'], person_list[0]['eta'],p
 print(person_list[1]['nome'], person_list[1]['cognome'], person_list[1]['eta'],person_list[1]['citta'])
 print(person_list[2]['nome'], person_list[2]['cognome'], person_list[2]['eta'],person_list[2]['citta'])
 
-6-8. Pets: Make several dictionaries, where each dictionary represents a different pet. In each dictionary, include the kind of animal and the owner’s name. Store these dictionaries in a list called pets. Next, loop through your list and as
-you do, print everything you know about each pet. 
+# 6-8. Pets: Make several dictionaries, where each dictionary 
+# represents a different pet. In each dictionary, include the kind 
+# of animal and the owner’s name. Store these dictionaries in a list 
+# called pets. Next, loop through your list and as
+# you do, print everything you know about each pet.
+
+pet: dict = {"razza":"pitbull", "proprietario":"ciccio"}
+pet_2: dict = {"razza":"rotwailer", "proprietario":"tedua"}
+pet_3: dict = {"razza":"bulldog", "proprietario":"marrakesh"}
+
+pet_list : list = [pet, pet_2, pet_3]
+print(pet_list[0]['razza'], pet_list[0]['proprietario'])
+print(pet_list[1]['razza'], pet_list[1]['proprietario'])
+print(pet_list[2]['razza'], pet_list[2]['proprietario']) 
+
+# 6-9. Favorite Places: Make a dictionary called favorite_places. 
+# Think of three names to use as keys in the dictionary, and store one 
+# to three favorite places for each person. To make this exercise a bit 
+# more interesting, ask some friends to name a few of their favorite places. 
+# Loop through the dictionary, and print each person’s name and their favorite
+# places.
+
+places: dict = {"mauro":["roma", "venezia"], "paolo":["miami","losangeles"],"sfera":"newyork"}
+
+print(places)
+
+# 6-10. Favorite Numbers: Modify your program from Exercise
+# 6-2 so each person can have more than one favorite number.
+# Then print each person’s name along with their favorite numbers.
+
+person: dict = {"paolo":[5, 3], "giacomo":[9, 4], "stefano":[23, 4] , "max":[3,4]}
+print(person)
+
+# 6-11. Cities: Make a dictionary called cities. Use the names of three 
+# cities as keys in your dictionary. Create a dictionary of information 
+# about each city and include the country that the city is in, its approximate
+# population, and one fact about that city. The keys for each city’s dictionary 
+# should be something like country, population, and fact. Print the name of each 
+# city and all of the information you have stored about it.
+
+cities: dict = {"venezia":["placed in italy ", "bellisima città costruita sull'acqua "], "roma":["placed in italy","città piu bella del mondo "],"new york":["placed in usa", "la grande mela "]}
+print(cities)
+
+
+# 6-12. Extensions: We’re now working with examples that are 
+# complex enough that they can be extended in any number of ways.
+# Use one of the example programs from this chapter, and extend it
+# by adding new keys and values, changing the context of the program, 
+# or improving the formatting of the output.
+
