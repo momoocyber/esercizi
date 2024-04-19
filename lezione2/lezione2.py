@@ -350,3 +350,22 @@ print(cities)
 # by adding new keys and values, changing the context of the program, 
 # or improving the formatting of the output.
 
+
+citta : list = ["losangeles", "dubai", "miami", "venezia","new york" ]
+
+print(citta)
+
+x : list = sorted(citta)
+print(x)
+print(citta)
+
+x : list = sorted(citta, reverse=True)
+print(x)
+print(citta)
+
+citta.reverse()
+print(citta)
+
+favorite_places: dict = {"mauro":["roma", "venezia"], "paolo":["miami","losangeles"],"sfera":"newyork"}
+print(favorite_places)
+
