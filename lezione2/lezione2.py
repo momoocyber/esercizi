@@ -369,3 +369,20 @@ print(citta)
 favorite_places: dict = {"mauro":["roma", "venezia"], "paolo":["miami","losangeles"],"sfera":"newyork"}
 print(favorite_places)
 
+citta : list = ["losangeles", "dubai", "miami", "venezia","new york" ]
+
+print(citta)
+
+x : list = sorted(citta)
+print(x)
+print(citta)
+
+x : list = sorted(citta, reverse=True)
+print(x)
+print(citta)
+
+citta.reverse()
+print(citta)
+
+favorite_places: dict = {"mauro":["roma", "venezia"], "paolo":["miami","losangeles"],"sfera":"newyork"}
+print(favorite_places)
