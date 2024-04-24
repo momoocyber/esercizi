@@ -1,3 +1,5 @@
+import time
+
 """# 8-1. Message: Write a function called display_message()
 # that prints one sentence telling everyone what you are 
 # learning about in this chapter. Call the function, and 
@@ -76,7 +78,7 @@ def describe_city(city: str, country: str="italy")->None:
 describe_city("rome")
 describe_city("venezia")
 describe_city("new york", "usa")
-"""
+
 
 # 8-6. City Names: Write a function called city_country() that takes in
 # the name of a city and its country. The function should return a string 
@@ -96,7 +98,7 @@ string_3 : str= describe_city("dubai","emirati")
 print(string)
 print(string_2)
 print(string_3)
-
+"""
 
 # 8-7. Album: Write a function called make_album() that builds a
 # dictionary describing a music album. The function should take in an artist
@@ -108,5 +110,85 @@ print(string_3)
 # of songs on an album. If the calling line includes a value for the number 
 # of songs, add that value to the album’s dictionary. Make at least one new 
 # function call that includes the number of songs on an album.
+
+
+
+
+
+
+
+
+
+
+# cosi si implementa il bubble sort
+
+
+def bubble_sort(numbers: list) -> list:
+
+    for i in range(len(numbers)):
+        for j in range(len(numbers)-1):
+            if numbers[j]> numbers[j+1]:
+                temp : int = numbers[j]
+                numbers[j]= numbers[j+1]
+                numbers[j+1]= temp
+                
+    return numbers
+            
+
+numbers : list = [i for i in range(10000, 1, -1)]
+start : float = time.time()
+ordinati : list =bubble_sort(numbers)
+print(ordinati)
+print(time.time()-start)
+
+
+#improved bubble sort
+
+def bubble_sort(numbers: list) -> list:
+
+    for i in range(len(numbers)):
+        for j in range(len(numbers)-i-1):
+            if numbers[j]> numbers[j+1]:
+                temp : int = numbers[j]
+                numbers[j]= numbers[j+1]
+                numbers[j+1]= temp
+                
+    return numbers
+            
+
+numbers : list =[i for i in range(10000, 1, -1)]
+
+start : float = time.time()
+ordinati : list =bubble_sort(numbers)
+print(ordinati)
+print(time.time()-start)
+
+
+# bubble sort with flag
+
+def bubble_sort(numbers: list) -> list:
+
+    for i in range(len(numbers)):
+        swap_flag : bool= False 
+        for j in range(len(numbers)-i-1):
+            if numbers[j]> numbers[j+1]:
+                temp : int = numbers[j]
+                numbers[j]= numbers[j+1]
+                numbers[j+1]= temp
+                swap_flag = True
+        if swap_flag == False :
+            return numbers
+                    
+    return numbers
+            
+
+numbers : list =[i for i in range(1, 10000)]
+
+start : float = time.time()
+ordinati : list = bubble_sort(numbers)
+print(ordinati)
+print(time.time()-start)
+
+
 
 
