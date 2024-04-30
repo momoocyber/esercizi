@@ -1,6 +1,6 @@
 import time
 
-"""# 8-1. Message: Write a function called display_message()
+# 8-1. Message: Write a function called display_message()
 # that prints one sentence telling everyone what you are 
 # learning about in this chapter. Call the function, and 
 # make sure the message displays correctly.
@@ -98,7 +98,7 @@ string_3 : str= describe_city("dubai","emirati")
 print(string)
 print(string_2)
 print(string_3)
-"""
+
 
 # 8-7. Album: Write a function called make_album() that builds a
 # dictionary describing a music album. The function should take in an artist
@@ -112,9 +112,213 @@ print(string_3)
 # function call that includes the number of songs on an album.
 
 
+def make_album(artist_name, album_title, num_song= None) -> dict:
+    album = {"artist": artist_name, "title": album_title}
+    if num_song!= None:
+        album["num_songs"]= num_song
+    return album  
+
+
+album_1 = make_album("Artist1", "Album1")
+album_2 = make_album("Artist2", "Album2")
+album_3 = make_album("Artist3", "Album3", 11)
+
+
+print(album_1)
+print(album_2)
+print(album_3)
 
 
 
+# 8-8. User Albums: Start with your program from Exercise 8-7. Write a while
+# loop that allows users to enter an album’s artist and title. Once you have that 
+# information, call make_album() with the user’s input and print the dictionary 
+# that’s created. Be sure to include a quit value in the while loop.
+
+
+def make_album(artist_name, album_title, num_song= None) -> dict:
+    album = {"artist": artist_name, "title": album_title}
+    if num_song!= None:
+        album["num_songs"]= num_song
+    return album  
+
+
+i : int =0
+while i<1:
+    artist : list= input("inserisci il nome del artista")
+    
+    album: list=input("inserisci il titolo dell'album")
+    
+    i=i+1
+
+
+
+
+album_1 = make_album("Artist1", "Album1")
+album_2 = make_album("Artist2", "Album2")
+album_3 = make_album("Artist3", "Album3", 11)
+album_4 = make_album(artist, album)
+
+print(album_1)
+print(album_2)
+print(album_3)
+print(album_4)
+
+
+
+# 8-9. Messages: Make a list containing a series of short text messages.
+# Pass the list to a function called show_messages(), which prints each text message.
+
+def show_message(list):
+    for i in list:
+        print(i)
+
+list   : list = ["ciao come stai", "paolo", "bonolis"]
+
+show_message(list)
+
+
+
+
+# 8-10. Sending Messages: Start with a copy of your program from Exercise 8-9. 
+# Write a function called send_messages() that prints each text message and moves each 
+# message to a new list called sent_messages as it’s printed. After calling the function,
+# print both of your lists to make sure the messages were moved correctly.
+
+
+#def show_message(list):
+#    for i in list:
+#        print(i)
+
+def send_message(list_1):
+    for i in list_1:
+        print(i)
+        sent_message= list_1[:]
+
+    return sent_message
+
+
+list_1   : list = ["ciao come stai", "paolo", "bonolis"]
+
+# show_message(list_1)
+send= send_message(list_1)
+print(f"questa è la nuova lista {send}")
+
+
+
+
+# 8-11. Archived Messages: Start with your work from Exercise 8-10. 
+# Call the function send_messages() with a copy of the list of messages. 
+# After calling the function, print both of your lists to show that the original
+# list has retained its messages.
+
+
+
+def send_message(list_1):
+    for i in list_1:
+        print(i)
+        sent_message= list_1[:]
+
+    return sent_message
+
+
+list_1   : list = ["ciao come stai", "paolo", "bonolis"]
+
+# show_message(list_1)
+send= send_message(list_1)
+print(f"questa è la nuova lista {send}")
+print(f"questa è la vecchia lista {list_1}")
+
+
+
+# 8-12. Sandwiches: Write a function that accepts a list of items a person wants on a sandwich. 
+# The function should have one parameter that collects as many items as the function call provides, 
+# and it should print a summary of the sandwich that’s being ordered. Call the function three times, 
+# using a different number of arguments each time.
+
+
+def items_sandwich(number:int):
+    list_items : list=[]
+    i=0
+    while i< number:
+        items= input("inserisci cosa vuoi mettere nel tuo sandwich")
+        list_items.append(items)
+        i=i+1
+
+    return list_items
+
+
+sandwich_1=items_sandwich(2)
+print(f"promemoria primo panino : {sandwich_1}")
+sandwich_2=items_sandwich(3)
+print(f"promemoria secondo panino : {sandwich_2}")
+sandwich_3=items_sandwich(4)
+print(f"promemoria terzo panino : {sandwich_3}")
+
+
+
+    
+# 8-13. User Profile:  Build a profile of yourself by calling build_profile(), 
+# using your first and last names and three other key-value pairs that describe you. 
+# All the values must be passed to the function as parameters. The function then must 
+# return a string such as "Eric Crow, age 45, hair brown, weight 67"
+
+
+def build_profile(name: str, last_name: str, age: int,  nationality: str):
+    profile= f"{name}, {last_name}, {age}, {nationality}"
+ 
+    return profile
+
+
+profile_1= build_profile("mario", "rossi", 33, "italiana")
+
+print(profile_1)
+
+
+# 8-14. Cars: Write a function that stores information about a car in a dictionary. 
+# The function should always receive a manufacturer and a model name. It should then accept 
+# an arbitrary number of keyword arguments. Call the function with the required information and 
+# two other name-value pairs, such as a color or an optional feature. Your function should work for 
+# a call like this one: car = make_car('subaru', 'outback', color='blue', tow_package=True) Print the 
+# dictionary that’s returned to make sure all the information was stored correctly. 
+
+
+def create_car(manufacturer, model, **kwargs):
+
+    dict_cars= {"manufacturer": manufacturer , "model": model}
+    dict_cars.update(kwargs)
+
+    return dict_cars
+
+car_1= create_car("ferrari", "purosangue", color="blue", year= 2023) 
+print(car_1)
+
+
+# 8-15. Printing Models: Put the functions for the example printing_models.py in a separate 
+# file called printing_functions.py. Write an import statement at the top of printing_models.py, 
+# and modify the file to use the imported functions.
+
+
+# 8-16. Imports: Using a program you wrote that has one function in it, 
+# store that function in a separate file. Import the function into your main program file, 
+# and call the function using each of these approaches:
+# import module_name
+# from module_name import function_name
+# from module_name import function_name as fn
+# import module_name as mn
+# from module_name import *
+
+import lezione44
+
+lezione44.display_message()
+
+lezione44.display_message_2()
+
+
+
+
+# 8-17. Styling Functions: Choose any three programs you wrote for this chapter, 
+# and make sure they follow the styling guidelines described in this section.
 
 
 
@@ -122,7 +326,7 @@ print(string_3)
 
 # cosi si implementa il bubble sort
 
-
+"""
 def bubble_sort(numbers: list) -> list:
 
     for i in range(len(numbers)):
@@ -191,4 +395,4 @@ print(time.time()-start)
 
 
 
-
+"""
