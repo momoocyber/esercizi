@@ -136,7 +136,7 @@ animals_2: Animal=  Animal("Teo", "Tiger", 6, 3.5, 4.0, "Jungle" )
 #animals_list : list[Animal]= [animals, animals_2]
 
 fences : Fence = Fence([], 150.0, 25.0, "Savannah")
-fences_2: Fence = Fence([], 170.0, 35.0, "jungle")
+fences_2: Fence = Fence([], 170.0, 35.0, "Jungle")
 #fences_list: list[Fence]  = [fences, fences_2] 
 
 zookeepers =  Zookeeper("John", "Doe", "123456")
@@ -147,6 +147,7 @@ zoo: Zoo= Zoo([zookeeper_instance, zookeepers], [fences, fences_2])
 
 
 zookeeper_instance.add_animal(animals, fences)
+zookeeper_instance.add_animal(animals_2, fences)
 #zookeeper_instance.remove_animal(animals, fences)
 zookeeper_instance.feed(animals)
 zookeeper_instance.clean(fences)
