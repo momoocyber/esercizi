@@ -35,7 +35,7 @@ class TestDottore(unittest.TestCase):
 
     def test_isValidDoctor(self):
         self.dottore.setAge(40)
-        self.assertEqual(self.dottore.isAValidDoctor(), None)
+        self.assertEqual(self.dottore.isAValidDoctor(), True)
 
 class TestPaziente(unittest.TestCase):
     def setUp(self):
@@ -47,9 +47,10 @@ class TestPaziente(unittest.TestCase):
 class TestFattura(unittest.TestCase):
     def setUp(self):
         self.dottore = Dottore("Cristiano", "Messi", "Ginecologo", 100.0)
+        self.dottore.setAge(42)
         self.paziente1 = Paziente("Fabio", "Seri", "BBBB3")
         self.paziente2 = Paziente("Claudio", "Ronaldo", "CCCC4")
-        self.fattura = Fattura(self.dottore, [self.paziente1, self.paziente2])
+        self.fattura = Fattura([self.paziente1, self.paziente2], self.dottore)
 
     def test_initialization(self):
         self.assertEqual(self.fattura.getFatture(), 2)
