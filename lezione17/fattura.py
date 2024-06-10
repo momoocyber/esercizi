@@ -32,19 +32,19 @@ class Fattura:
         else:
             return None
 
-    def addPatient(self, newPatient):
+    def addPatient(self, newPatient: Paziente):
         if self.patients is not None:
             self.patients.append(newPatient)
             self.fatture = len(self.patients)
             self.salary = self.getSalary()
-            print(f"Alla lista del Dottor {self.doctor.last_name} è stato aggiunto il paziente {newPatient.codice_identificativo}")
+            print(f"Alla lista del Dottor {self.doctor.last_name} è stato aggiunto il paziente {newPatient.getIdCode()}")
         else:
             print("Non è possibile aggiungere pazienti perché il dottore non è valido!")
 
     def removePatient(self, patient_id):
         if self.patients is not None:
             for patient in self.patients:
-                if patient.__idCode == patient_id:
+                if patient.getIdCode() == patient_id:
                     self.patients.remove(patient)
                     self.fatture = len(self.patients)
                     self.salary = self.getSalary()
